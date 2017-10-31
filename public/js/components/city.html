@@ -1,0 +1,41 @@
+<div>
+  <form>
+
+    Ville:<br>
+    <input type="text" name="lastname" value="" ng-model="city"><br><br>
+    <input type="submit" value="Submit" ng-click="$ctrl.getCity(city)">
+  </form>
+</div>
+
+  <div>
+    <span>le taux d'humidité : {{$ctrl.weather.main.humidity}}</span><br>
+    <span>La latitude est de : {{$ctrl.weather.coord.lat}}</span>
+  </div>
+	<p>
+    Min: <span class="max-min-temp min">{{$ctrl.weather.main.temp_min | number:1}}</span><span class="celsius-sign">&#8451</span>
+  </p>
+
+  <p>
+    Max: <span class="max-min-temp max">{{$ctrl.weather.main.temp_max | number:1}}</span><span class="celsius-sign"> &#8451</span>
+  </p>
+
+  température <span class="main-temp">{{$ctrl.weather.main.temp  | number:1}}</span>
+
+  
+</div>
+
+<a name="lkr-timelapse-player"
+data-id="1178148742"
+data-play="day"
+href="https://lookr.com/1178148742"
+target="_blank">
+Nom de la ville
+</a>
+
+<!-- -->
+
+<div class="large-12 columns">
+
+
+
+</div>
