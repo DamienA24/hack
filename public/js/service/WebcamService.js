@@ -6,14 +6,12 @@ angular.module('app')
 
     this.getWebcams = (lat, lng, radius) => {
       let defer = $q.defer();
-      const API_URL = `https://webcamstravel.p.mashape.com/webcams/list/nearby=${lat},${lng},${radius}`;
+      const API_URL = `https://webcamstravel.p.mashape.com/webcams/list/nearby=${lat},${lng},${radius}&show=webcams:image`;
 
       $http.get(API_URL,{
         headers : {'X-Mashape-Key': 'NtcDcoaAifmsh9283hqEAHwtpxipp1Pkw16jsnG5k6sQKpSLbg'}
-        
-      }).then((response) => {
-        defer.resolve(response.data);
-        console.log(response);
+        }).then((response) => {
+        defer.resolve(response.data.result.webcams);
       }).catch((error) => {
         defer.reject(error.statusText);
       });
